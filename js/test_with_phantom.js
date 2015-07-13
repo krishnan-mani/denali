@@ -47,9 +47,10 @@ page.open("http://www.google.com", function (status) {
             var title = page.evaluate(function(s) {
                 return document.querySelector(s).innerText;
             }, 'title');
+            console.log(title);
             return title === 'Google';
         }, function() {
-            console.log("The search text input should be visible now.");
+            console.log("Google should be loaded now.");
             phantom.exit();
         });
     }
